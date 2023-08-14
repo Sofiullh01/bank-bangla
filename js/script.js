@@ -8,10 +8,10 @@ document.getElementById('SubmetBtn').addEventListener('click', function(){
     const password = passAddress.value;
     
 
-    if(email === "sorif@gmail.com" && password === "sorifislam"){
-        console.log('valid user')
+    if(email === "sorif@gmail.com" && password === "sorif"){
+        location.href = 'bank.html';
     }else{
-        console.log(" unvalid user" )
+        alert (" password janos na tore jetedebo na" )
     }
 
 });
