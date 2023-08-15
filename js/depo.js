@@ -3,6 +3,12 @@ document.getElementById('dpoBtn').addEventListener('click', function(){
     const depoInput = document.getElementById('depoInput');
     const newDepositAmontString = depoInput.value ;
     const newDepositAmont = parseFloat(newDepositAmontString);
+
+    depoInput.value = '';
+    if(isNaN(newDepositAmont)){
+        alert ('please taka daaaaa...')
+        return;
+    };
     
     
     const displayDepoSum = document.getElementById('displayDepoSum');
@@ -12,7 +18,7 @@ document.getElementById('dpoBtn').addEventListener('click', function(){
     const currentDepositSum = newDepositAmont + displayDepoSumAmont;
 
     displayDepoSum.innerText = currentDepositSum;
-    depoInput.value = '';
+
 
     const displayTotaSum = document.getElementById('displayTotaSum');
     const displayTotaSumString = displayTotaSum.innerText;
@@ -29,15 +35,25 @@ document.getElementById('widtBtn').addEventListener('click', function(){
     const withdrawInput = document.getElementById('WithdrawInput');
     const newWithdrawInputString = withdrawInput.value ;
     const newWithdrawAmont = parseFloat(newWithdrawInputString);
+    withdrawInput.value = '';
+    if(isNaN(newWithdrawAmont)){
+        alert ('please taka daaaaa...')
+        return;
+    };
 
     const displayWirSum = document.getElementById('displayWirSum');
     const displayWirSumString = displayWirSum.innerText;
     const displayWirSumAmont = parseFloat(displayWirSumString)
 
+    
+    if(newWithdrawAmont > displayWirSumAmont){
+        alert ('atho taka nai ');
+        return;
+    };
     const currentWithdrSum = newWithdrawAmont + displayWirSumAmont;
 
     displayWirSum.innerText = currentWithdrSum ;
-    withdrawInput.value = '';
+    
 
     const displayTotaSum = document.getElementById('displayTotaSum');
     const displayTotaSumString = displayTotaSum.innerText;
